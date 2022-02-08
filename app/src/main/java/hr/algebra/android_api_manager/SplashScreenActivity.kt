@@ -1,14 +1,16 @@
 package hr.algebra.android_api_manager
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import hr.algebra.android_api_manager.databinding.ActivitySplashScreenBinding
-import hr.algebra.android_api_manager.framework.startActivity
-import hr.algebra.android_api_manager.framework.startAnimation
+import hr.algebra.android_api_manager.framework.*
 
 private const val DELAY = 4000L
+const val DATA_IMPORTED = "hr.algebra.android_api_manager.data_imported"
+
 class SplashScreenActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashScreenBinding
@@ -28,10 +30,23 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun redirect() {
-        Handler(Looper.getMainLooper()).postDelayed(
-            {
-                startActivity<HostActivity>()
-            }, DELAY
-        )
+        // If data imported, redirect:
+        if (getBooleanPreference(DATA_IMPORTED)) {
+            callDelayed(DELAY) { startActivity<HostActivity>() }
+        } else {
+            if (isOnline()) {
+                // 1. If online, begin service for fetching data
+                Intent(this, APIManagerService::class.java).apply {
+                    APIManagerService.enqueue(
+                        this@SplashScreenActivity,
+                        this
+                    )
+                }
+            } else {
+                // 2. Else show message and exit
+                binding.tvSplash.text = getString(R.string.no_internet)
+                callDelayed(DELAY) { finish() }
+            }
+        }
     }
 }
