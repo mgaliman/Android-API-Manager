@@ -1,9 +1,13 @@
 package hr.algebra.android_api_manager.api
 
+import android.content.ContentValues
 import android.content.Context
 import android.util.Log
+import hr.algebra.android_api_manager.APIMANAGER_PROVIDER_URI
 import hr.algebra.android_api_manager.APIManagerReceiver
+import hr.algebra.android_api_manager.DATA_IMPORTED
 import hr.algebra.android_api_manager.framework.sendBroadcast
+import hr.algebra.android_api_manager.framework.setBooleanPreference
 import hr.algebra.android_api_manager.handler.downloadImageAndStore
 import hr.algebra.android_api_manager.model.Item
 import kotlinx.coroutines.GlobalScope
@@ -49,26 +53,24 @@ class APIManagerFetcher(private val context: Context) {
     private fun populateItems(apiManagerItems: APIManagerItem) {
 
         GlobalScope.launch {
-            val items = mutableListOf<Item>()
             apiManagerItems.items.forEach {
                 val picturePath = downloadImageAndStore(
                     context,
                     it.snippet.thumbnails.default.url,
                     it.snippet.title.replace(" ", "_")
                 )
-                items.add(
-                    Item(
-                        null,
-                        it.snippet.title,
-                        it.snippet.description,
-                        picturePath ?: "",
-                        it.id,
-                        it.snippet.publishedAt,
-                        false
-                    )
-                )
+
+                val values = ContentValues().apply {
+                    put(Item::title.name, it.snippet.title)
+                    put(Item::description.name, it.snippet.description)
+                    put(Item::picturePath.name, picturePath ?: "")
+                    put(Item::videoPath.name, it.id)
+                    put(Item::publishedDate.name, it.snippet.publishedAt)
+                    put(Item::favourite.name, false)
+                }
+                context.contentResolver.insert(APIMANAGER_PROVIDER_URI, values)
             }
-            //setBooleanPreference(DATA_IMPORTED, true)
+            context.setBooleanPreference(DATA_IMPORTED, true)
             context.sendBroadcast<APIManagerReceiver>()
         }
     }
