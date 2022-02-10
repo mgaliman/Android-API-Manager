@@ -13,6 +13,8 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.core.content.getSystemService
 import androidx.preference.PreferenceManager
+import hr.algebra.android_api_manager.APIMANAGER_PROVIDER_URI
+import hr.algebra.android_api_manager.model.Item
 
 fun View.startAnimation(animationId: Int) =
     startAnimation(AnimationUtils.loadAnimation(context, animationId))
@@ -51,4 +53,28 @@ fun callDelayed(delay: Long, function: Runnable) {
         function,
         delay
     )
+}
+
+fun Context.fetchItems(): MutableList<Item> {
+    val items = mutableListOf<Item>()
+    val cursor = contentResolver?.query(
+        APIMANAGER_PROVIDER_URI,
+        null,
+        null,
+        null,
+        null
+    )
+    while (cursor != null && cursor.moveToNext())
+        items.add(
+            Item(
+                cursor.getLong(cursor.getColumnIndexOrThrow(Item::_id.name)),
+                cursor.getString(cursor.getColumnIndexOrThrow(Item::title.name)),
+                cursor.getString(cursor.getColumnIndexOrThrow(Item::description.name)),
+                cursor.getString(cursor.getColumnIndexOrThrow(Item::picturePath.name)),
+                cursor.getString(cursor.getColumnIndexOrThrow(Item::videoPath.name)),
+                cursor.getString(cursor.getColumnIndexOrThrow(Item::publishedDate.name)),
+                cursor.getInt(cursor.getColumnIndexOrThrow(Item::favourite.name)) == 1
+            )
+        )
+    return items
 }

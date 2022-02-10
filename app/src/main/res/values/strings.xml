@@ -9,4 +9,6 @@
     <string name="cancel">Cancel</string>
     <string name="confirm">Ok</string>
     <string name="application_made_by">Application made by G Man</string>
+    <string name="delete">Delete</string>
+    <string name="deleteConfirm">Sure you want to delete?</string>
 </resources>
