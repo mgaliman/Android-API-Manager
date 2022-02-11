@@ -25,9 +25,22 @@ class SoundBoardFragment : Fragment() {
 
     private fun initButton() {
 
-        val mp : MediaPlayer = MediaPlayer.create(requireContext(), R.raw.cat_meow)
-        binding.btnOne.setOnClickListener { mp.start() }
+        val mp01 : MediaPlayer = MediaPlayer.create(requireContext(), R.raw.a)
+        binding.btnOne.setOnClickListener { mp01.start() }
+
+        val mp02 : MediaPlayer = MediaPlayer.create(requireContext(), R.raw.cepanje)
+        binding.btnTwo.setOnClickListener { mp02.start() }
+
+        val mp03 : MediaPlayer = MediaPlayer.create(requireContext(), R.raw.dobra)
+        binding.btnThree.setOnClickListener { mp03.start() }
+
+        val mp04 : MediaPlayer = MediaPlayer.create(requireContext(), R.raw.dobro)
+        binding.btnFour.setOnClickListener { mp04.start() }
+
+        val mp05 : MediaPlayer = MediaPlayer.create(requireContext(), R.raw.nani)
+        binding.btnFive.setOnClickListener { mp05.start() }
+
+        val mp06 : MediaPlayer = MediaPlayer.create(requireContext(), R.raw.skra)
+        binding.btnSix.setOnClickListener { mp06.start() }
     }
-
-
 }

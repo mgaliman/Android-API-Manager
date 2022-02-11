@@ -16,8 +16,10 @@
     <string name="description">Description</string>
     <string name="videoLink">Video Link</string>
     <string name="sound_board">Sound Board</string>
-    <string name="scream_one">Scream One</string>
-    <string name="scream_two">Scream Two</string>
-    <string name="scream_three">Scream Three</string>
-    <string name="scream_four">Scream Four</string>
+    <string name="scream_one">Frightened</string>
+    <string name="scream_two">Chill</string>
+    <string name="scream_three">Pretty</string>
+    <string name="scream_four">Tasty</string>
+    <string name="scream_five">"?!"</string>
+    <string name="scream_six">Joyful</string>
 </resources>

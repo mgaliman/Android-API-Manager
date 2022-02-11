@@ -7,7 +7,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,15 +21,15 @@
             <Button
                 android:id="@+id/btnOne"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="@dimen/btnSoundBoardHeight"
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="@android:color/holo_green_dark"
                 android:text="@string/scream_one" />
 
             <Button
-                android:id="@+id/btntwo"
+                android:id="@+id/btnTwo"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="@dimen/btnSoundBoardHeight"
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="@android:color/holo_green_dark"
                 android:text="@string/scream_two" />
@@ -37,7 +37,7 @@
             <Button
                 android:id="@+id/btnThree"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="@dimen/btnSoundBoardHeight"
                 android:layout_marginBottom="30dp"
                 android:backgroundTint="@android:color/holo_green_dark"
                 android:text="@string/scream_three" />
@@ -45,10 +45,25 @@
             <Button
                 android:id="@+id/btnFour"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="@dimen/btnSoundBoardHeight"
+                android:layout_marginBottom="30dp"
                 android:backgroundTint="@android:color/holo_green_dark"
                 android:text="@string/scream_four" />
 
+            <Button
+                android:id="@+id/btnFive"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btnSoundBoardHeight"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@android:color/holo_green_dark"
+                android:text="@string/scream_five" />
+
+            <Button
+                android:id="@+id/btnSix"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btnSoundBoardHeight"
+                android:backgroundTint="@android:color/holo_green_dark"
+                android:text="@string/scream_six" />
         </LinearLayout>
 
     </ScrollView>
