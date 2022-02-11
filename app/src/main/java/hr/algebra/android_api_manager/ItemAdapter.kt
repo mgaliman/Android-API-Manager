@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import hr.algebra.android_api_manager.framework.startActivity
 import hr.algebra.android_api_manager.model.Item
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation
 import java.io.File
@@ -39,7 +40,7 @@ class ItemAdapter(private val context: Context, private val items: MutableList<I
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemView.setOnClickListener {
-            //Start new activity
+            context.startActivity<APIManagerPagerActivity>(ITEM_POSITION, position)
         }
         holder.itemView.setOnLongClickListener {
             AlertDialog.Builder(context).apply {

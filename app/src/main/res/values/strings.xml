@@ -11,4 +11,8 @@
     <string name="application_made_by">Application made by G Man</string>
     <string name="delete">Delete</string>
     <string name="deleteConfirm">Sure you want to delete?</string>
+    <string name="published_date">Published Date</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="videoLink">Video Link</string>
 </resources>

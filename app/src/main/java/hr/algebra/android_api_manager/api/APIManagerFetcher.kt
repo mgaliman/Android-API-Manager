@@ -56,7 +56,7 @@ class APIManagerFetcher(private val context: Context) {
             apiManagerItems.items.forEach {
                 val picturePath = downloadImageAndStore(
                     context,
-                    it.snippet.thumbnails.default.url,
+                    it.snippet.thumbnails.maxres.url,
                     it.snippet.title.replace(" ", "_")
                 )
 

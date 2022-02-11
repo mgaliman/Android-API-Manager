@@ -12,11 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidAPIManager">
+        <activity
+            android:name=".APIManagerPagerActivity"
+            android:exported="true" />
+
         <provider
             android:name=".APIManagerProvider"
             android:authorities="hr.algebra.android_api_manager.api.provider"
             android:enabled="true"
-            android:exported="false"></provider>
+            android:exported="false" />
 
         <receiver
             android:name=".APIManagerReceiver"
