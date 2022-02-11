@@ -2,7 +2,7 @@
     <string name="app_name">G Man</string>
     <string name="please_wait">Please wait!</string>
     <string name="no_internet">No internet!</string>
-    <string name="items">Items</string>
+    <string name="items">Videos</string>
     <string name="about">About</string>
     <string name="exit">Exit</string>
     <string name="really_exit">Really exit?</string>
@@ -15,4 +15,9 @@
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="videoLink">Video Link</string>
+    <string name="sound_board">Sound Board</string>
+    <string name="scream_one">Scream One</string>
+    <string name="scream_two">Scream Two</string>
+    <string name="scream_three">Scream Three</string>
+    <string name="scream_four">Scream Four</string>
 </resources>

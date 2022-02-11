@@ -30,7 +30,6 @@ class ItemAdapter(private val context: Context, private val items: MutableList<I
                 .into(ivItem)
             tvItem.text = item.title
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =

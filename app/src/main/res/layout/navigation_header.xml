@@ -2,5 +2,4 @@
 <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
     android:src="@drawable/g_about"
     android:layout_width="@dimen/nhWidth"
-    android:layout_height="@dimen/nhHeight"
-    android:layout_marginTop="@dimen/nhMarginTop"/>
+    android:layout_height="@dimen/nhHeight"/>

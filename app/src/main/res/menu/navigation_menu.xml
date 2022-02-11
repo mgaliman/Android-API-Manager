@@ -7,6 +7,11 @@
         android:icon="@drawable/items"/>
 
     <item
+        android:id="@+id/menuSoundBoard"
+        android:title="@string/sound_board"
+        android:icon="@drawable/sound_board"/>
+
+    <item
         android:id="@+id/menuAbout"
         android:title="@string/about"
         android:icon="@drawable/about"/>

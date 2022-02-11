@@ -12,6 +12,12 @@
         tools:layout="@layout/fragment_items"/>
 
     <fragment
+        android:id="@+id/menuSoundBoard"
+        android:name="hr.algebra.android_api_manager.SoundBoardFragment"
+        android:label="@string/sound_board"
+        tools:layout="@layout/fragment_sound_board"/>
+
+    <fragment
         android:id="@+id/menuAbout"
         android:name="hr.algebra.android_api_manager.AboutFragment"
         android:label="@string/about"
