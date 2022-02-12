@@ -47,8 +47,8 @@ class ItemAdapter(private val context: Context, private val items: MutableList<I
                 setMessage(context.getString(R.string.deleteConfirm) + " '${items[position].title}'?")
                 setIcon(R.drawable.delete)
                 setCancelable(true)
-                setNegativeButton(R.string.cancel, null)
-                setPositiveButton(R.string.confirm) { _, _ -> deleteItem(position) }
+                setNegativeButton(context.getString(R.string.nah), null)
+                //setPositiveButton(R.string.confirm) { _, _ -> deleteItem(position) }
                 show()
             }
             true

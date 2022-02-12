@@ -11,10 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidAPIManager">
-        <activity
-            android:name=".SoundBoardActivity"
-            android:exported="true" />
+        android:theme="@style/Theme.CurrentLocation">
         <activity
             android:name=".APIManagerPagerActivity"
             android:exported="true" />
